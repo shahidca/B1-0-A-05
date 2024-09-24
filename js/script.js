@@ -1,3 +1,16 @@
+// section showing and hiding function here 
+const historySectionShow=function(idName){
+    document.getElementById('donation-container').classList.add('hidden');
+    document.getElementById('transaction-history').classList.add('hidden');
+    document.getElementById(idName).classList.remove('hidden');
+}
+
+// Button Active and Inactive Common Function is here
+const buttonActive = function (idName) {
+    document.getElementById('donation-btn').classList.remove('btn-success');
+    document.getElementById('history-btn').classList.remove('btn-success');
+    document.getElementById(idName).classList.add('btn-success');
+}
 
 // Donated function start here 
 const donationBangladesh=function(yourDonatedAmount, mainBalance ,donatedBalance  ){
@@ -12,17 +25,12 @@ const donationBangladesh=function(yourDonatedAmount, mainBalance ,donatedBalance
         const newMainBalance=accountBalance - donationAmount;
         document.getElementById('account-balance').innerText=newMainBalance;
         document.getElementById('my_modal_5').showModal()
-        // History 
-        const donateFor=document.querySelector('.donate-for').innerText;
-        const history=document.createElement('history');
-        history.innerText`<h3 class="text-lg font-bold">${donationAmount} tk is donated for ${donateFor}</h3>`
-
-    }else{
+ }else{
         alert(' Invalid donation amount')
     }
 
 };
-// Donated function end here 
+// donationBangladesh function calling here 
 document.getElementById('donation-of-noakhali-btn').addEventListener('click',function(){
     donationBangladesh( 'input-donation-amount-noakhali', 'donation-amount-noakhali', 'account-balance');
 })
@@ -34,10 +42,12 @@ document.getElementById('donation-of-quota-btn').addEventListener('click',
 function(){
     donationBangladesh( 'input-donation-amount-quota', 'donation-amount-quota', 'account-balance');
 })
-// history section start here 
-// const historySectionShow=function(id){
-//     document.getElementById('donation-container').classList.add('hidden');
-//     document.getElementById('transaction-history').classList.add('hidden');
-//     document.getElementById(id).classList.remove('hidden');
-// }
-// history section start here 
+// Section showing and hiding functionality here 
+document.getElementById('donation-btn').addEventListener('click', function(){
+    historySectionShow('donation-container');
+    buttonActive('donation-btn');
+})    
+document.getElementById('history-btn').addEventListener('click', function(){
+    historySectionShow('transaction-history');
+    buttonActive('history-btn');
+})
