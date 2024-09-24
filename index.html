@@ -30,7 +30,7 @@
               <div class="navbar-start">
                 <div class="dropdown">
                   <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                      <a href="/blog.html" class="btn btn-success">Blog</a>
+                      <a href="blog.html" class="btn btn-success">Blog</a>
                   </div>
                
                 </div>
@@ -50,7 +50,7 @@
           <section class="mt-20 text-center mb-28 pb-10 ">
             <a href="#donation-container" class="btn btn-success">Donation</a>
             <!-- <button class="btn btn-success">Donation</button> -->
-            <a href="/history.html" class="btn ">History</a>
+            <a href="./history.html" class="btn ">History</a>
            
          </section>
         
@@ -134,6 +134,31 @@
                   </div>
                 </div>
               </section>
+              <!-- The modal section start here  -->
+              <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box text-center">
+    <h2 class="text-2xl font-bold mb-4">Congratulation!</h2>
+    <img class="inline-block mx-auto" src="./assets/coin.png" alt="">
+    <p class="py-4">If you’re looking to donate to help people in need</p>
+    <h3 class="text-lg font-bold mb-4">Successfully</h3>
+    <div class="modal-action justify-center">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close Conformation</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+              <!-- The modal section end here  -->
+               <!-- The history section start here  -->
+                <div class="container mx-auto">
+                  <div class="history hidden" id="transaction-history"></div>
+
+                </div>
+               <!-- The history section end here  -->
+               
           </main>
           <footer class="bg-stone-500 h-20">
 

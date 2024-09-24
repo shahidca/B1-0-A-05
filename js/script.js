@@ -11,11 +11,11 @@ const donationBangladesh=function(yourDonatedAmount, mainBalance ,donatedBalance
         document.getElementById(mainBalance).innerText=newTotalDonatedBalance;
         const newMainBalance=accountBalance - donationAmount;
         document.getElementById('account-balance').innerText=newMainBalance;
-        // document.getElementById('my-modal').showModal()
+        document.getElementById('my_modal_5').showModal()
         // History 
-        // const donateFor=document.querySelector('.donate-for').innerText;
-        // const history=document.createElement('history');
-        // history.innerText`<h3 class="text-lg font-bold">${donationAmount} tk is donated for ${donateFor}</h3>`
+        const donateFor=document.querySelector('.donate-for').innerText;
+        const history=document.createElement('history');
+        history.innerText`<h3 class="text-lg font-bold">${donationAmount} tk is donated for ${donateFor}</h3>`
 
     }else{
         alert(' Invalid donation amount')
@@ -34,3 +34,10 @@ document.getElementById('donation-of-quota-btn').addEventListener('click',
 function(){
     donationBangladesh( 'input-donation-amount-quota', 'donation-amount-quota', 'account-balance');
 })
+// history section start here 
+// const historySectionShow=function(id){
+//     document.getElementById('donation-container').classList.add('hidden');
+//     document.getElementById('transaction-history').classList.add('hidden');
+//     document.getElementById(id).classList.remove('hidden');
+// }
+// history section start here 
